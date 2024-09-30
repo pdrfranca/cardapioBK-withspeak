@@ -1,101 +1,157 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardápio com Speech Synthesis</title>
+    <title>Cardápio BK</title>
     <link rel="stylesheet" href="src/css/style.css">
+    <link rel="shortcut icon" href="https://www.burgerking.com.br/images/bklogos/BK-novo-logo-eggwhite.svg" type="svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-
-    <h1>Cardápio de Pratos</h1>
-
-    <div class="cardapio">
-        <!-- Prato 1 -->
-        <div class="prato">
-            <img src="https://images.unsplash.com/photo-1713561058969-793049b01712?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Macarrão ao molho de tomate com manjericão">
-            <h2>Macarrão ao Molho de Tomate</h2>
-            <p>Delicioso macarrão ao molho de tomate fresco, manjericão e parmesão ralado.</p>
-            <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+    <header>
+        <nav>
+            <img src="https://www.burgerking.com.br/images/bklogos/BK-novo-logo.svg" alt="">
+            <ul>
+                <li><a href="">Início</a></li>
+                <li><a href="">Cupons</a></li>
+                <li><a href="">Cardápio</a></li>
+                <li><a href="">App BK</a></li>
+                <li><a href="">Clube BK</a></li>
+                <li><a href="">Delivery</a></li>
+            </ul>
+        </nav>
+        <div id="caction"><img src="https://d3sn2rlrwxy0ce.cloudfront.net/carne-banner-cardapio2-d.jpg?mtime=20210226103612&focal=none" alt=""></div>
+    </header>
+    <div id="cardapio">
+        <div class="title">
+            <h2>Cardápio</h2>
+            <div id="filtro"><button><i class="fa-solid fa-filter"></i> Filtrar</button></div>
         </div>
-
-        <!-- Prato 2 -->
-        <div class="prato">
-            <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?q=80&w=1769&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Filé de frango grelhado com legumes">
-            <h2>Frango Grelhado com Legumes</h2>
-            <p>Filé de frango grelhado, acompanhado de legumes frescos salteados.</p>
-            <button onclick="lerDescricao(this)">Ouvir Descrição</button>
-        </div>
-
-        <!-- Prato 3 -->
-        <div class="prato">
-            <img src="https://images.unsplash.com/photo-1623962470629-ead26532ef44?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Risoto de camarão com ervas finas">
-            <h2>Risoto de Camarão</h2>
-            <p>Risoto cremoso com camarão e ervas finas, servido com vinho branco.</p>
-            <button onclick="lerDescricao(this)">Ouvir Descrição</button>
-        </div>
-
-        <!-- Prato 4 -->
-        <div class="prato">
-            <img src="https://images.unsplash.com/photo-1707576517985-a2e912cca325?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Salmão grelhado com purê de batata doce">
-            <h2>Salmão Grelhado</h2>
-            <p>Salmão grelhado servido com purê de batata doce e molho de limão.</p>
-            <button onclick="lerDescricao(this)">Ouvir Descrição</button>
-        </div>
-
-        <!-- Prato 5 -->
-        <div class="prato">
-            <img src="https://images.unsplash.com/photo-1499778003268-cbafc6d08bab?q=80&w=1769&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pizza margherita com manjericão fresco">
-            <h2>Pizza Margherita</h2>
-            <p>Pizza tradicional com molho de tomate, mussarela e manjericão fresco.</p>
-            <button onclick="lerDescricao(this)">Ouvir Descrição</button>
-        </div>
-
-        <!-- Prato 6 -->
-        <div class="prato">
-            <img src="https://images.unsplash.com/photo-1517800140676-e7e8312bc02d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bife à parmegiana com arroz e batata frita">
-            <h2>Bife à Parmegiana</h2>
-            <p>Bife à milanesa gratinado com molho de tomate e queijo, servido com arroz e batata frita.</p>
-            <button onclick="lerDescricao(this)">Ouvir Descrição</button>
-        </div>
-
-        <!-- Prato 7 -->
-        <div class="prato">
-            <img src="https://images.unsplash.com/photo-1524412529635-a258ed66c010?q=80&w=1995&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tacos mexicanos com carne e guacamole">
-            <h2>Tacos Mexicanos</h2>
-            <p>Tacos crocantes recheados com carne moída, guacamole e sour cream.</p>
-            <button onclick="lerDescricao(this)">Ouvir Descrição</button>
-        </div>
-
-        <!-- Prato 8 -->
-        <div class="prato">
-            <img src="https://images.unsplash.com/photo-1551892269-860b1e482f98?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lasagna de carne com queijo gratinado">
-            <h2>Lasagna de Carne</h2>
-            <p>Lasagna de carne ao molho bolonhesa, coberta com queijo gratinado.</p>
-            <button onclick="lerDescricao(this)">Ouvir Descrição</button>
-        </div>
-
-        <!-- Prato 9 -->
-        <div class="prato">
-            <img src="https://images.unsplash.com/photo-1657014193301-54e4442fa2fe?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Salada grega com queijo feta e azeitonas">
-            <h2>Salada Grega</h2>
-            <p>Salada fresca com tomate, pepino, queijo feta e azeitonas pretas.</p>
-            <button onclick="lerDescricao(this)">Ouvir Descrição</button>
-        </div>
-
-        <!-- Prato 10 -->
-        <div class="prato">
-            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Salada grega com queijo feta e azeitonas">
-            <h2>Salada Grega</h2>
-            <p>Salada fresca com tomate, pepino, queijo feta e azeitonas pretas.</p>
-            <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+        <div id="gradeFlex">
+            <div>
+                <div class="img">
+                    <img class="imgM" src="https://d3sn2rlrwxy0ce.cloudfront.net/The-King_King-Costela_Externa_Novo.png?mtime=20240620132633&focal=none" alt="King Costela">
+                </div>
+                <p>King Costela</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div>
+                <div class="img">
+                    <img class="imgM" src="https://d3sn2rlrwxy0ce.cloudfront.net/whopper-catupiry-thumb-novo.png?mtime=20240206234258&focal=none" alt="Whopper® Bacon Catupiry®">
+                </div>
+                <p>Whopper® Bacon Catupiry®</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div>
+                <div class="img">
+                    <img src="https://d3sn2rlrwxy0ce.cloudfront.net/Whopper-Rodeio.png?mtime=20230731182625&focal=none" alt="Whopper® Rodeio">
+                </div>
+                <p>Whopper® Rodeio</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div>
+                <div class="img">
+                    <img class="imgM" src="https://d3sn2rlrwxy0ce.cloudfront.net/whopper-bbq-bacon-thumb_2021-09-16-133011_rnpl.png?mtime=20210916133012&focal=none" alt="Whopper® Barbecue Bacon">
+                </div>
+                <p>Whopper® Barbecue Bacon</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div>
+                <div class="img">
+                    <img class="imgM" src="https://d3sn2rlrwxy0ce.cloudfront.net/whopper-duplo-thumb.png?mtime=20210916131816&focal=none" alt="Whopper® Duplo">
+                </div>
+                <p>Whopper® Duplo</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div>
+                <div class="img">
+                    <img src="https://d3sn2rlrwxy0ce.cloudfront.net/Whopper-Furioso.png?mtime=20230731182816&focal=none" alt="Whopper® Furioso">
+                </div>
+                <p>Whopper® Furioso</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div>
+                <div class="img">
+                    <img class="imgM" src="https://d3sn2rlrwxy0ce.cloudfront.net/maga-stacker-cheddar-2-thumb.png?mtime=20210916134008&focal=none" alt="Mega Stacker Cheddar 2.0">
+                </div>
+                <p>Mega Stacker Cheddar 2.0</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div>
+                <div class="img">
+                    <img class="imgM" src="https://d3sn2rlrwxy0ce.cloudfront.net/maga-stacker-atomico-2-thumb.png?mtime=20210916133613&focal=none" alt="Mega Stacker Atômico 2.0">
+                </div>
+                <p>Mega Stacker Atômico 2.0</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div>
+                <div class="img">
+                    <img class="imgM" src="https://d3sn2rlrwxy0ce.cloudfront.net/maga-stacker-2-thumb.png?mtime=20210916133150&focal=none" alt="Mega Stacker 2.0">
+                </div>
+                <p>Mega Stacker 2.0</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div>
+                <div class="img">
+                    <img src="https://d3sn2rlrwxy0ce.cloudfront.net/Mega-Stacker-cheddar-3.0-thumb-cupom-m-d_2022-07-21-170304_esmv.png?mtime=20220721170304&focal=none" alt="Mega Stacker Cheddar 3.0">
+                </div>
+                <p>Mega Stacker Cheddar 3.0</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div>
+                <div class="img">
+                    <img src="https://d3sn2rlrwxy0ce.cloudfront.net/Mega-Stacker-3.0-thumb-cupom-m-d_2022-07-21-165917_cczx.png?mtime=20220721165917&focal=none" alt="Mega Stacker 3.0">
+                </div>
+                <p>Mega Stacker 3.0</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div>
+                <div class="img">
+                    <img src="https://d3sn2rlrwxy0ce.cloudfront.net/Mega-Stacker-atomico-3.0-thumb-cupom-m-d_2022-07-21-170135_cnnj.png?mtime=20220721170136&focal=none" alt="Mega Stacker Atômico 3.0">
+                </div>
+                <p>Mega Stacker Atômico 3.0</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
         </div>
     </div>
-
+    <div id="tabela">
+        <button>Ver tabela</button>
+    </div>
+    <footer>
+        <img src="https://www.burgerking.com.br/images/bklogos/BK-novo-logo-eggwhite.svg" alt="">
+        <div>
+            <ul class="nth">
+                <li><a href="">App BK</a></li>
+                <li><a href="">Sobre o BK</a></li>
+                <li><a href="">Trabalhe conosco</a></li>
+                <li><a href="">Seja um franqueado</a></li>
+                <li><a href="">Relações com investidores</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li><a href="">Diretrizes de Privacidade de Dados</a></li>
+                <li><a href="">Regulamento do Clube BK</a></li>
+                <li><a href="">Política de Publicidade Infantil</a></li>
+                <li><a href="">Informações Legais</a></li>
+                <li><a href="">Opções de Privacidade</a></li>
+            </ul>
+        </div>
+        <hr>
+        <div class="social">
+            <p class="nth">Compartilhe algo delicioso</p>
+            <ul>
+                <li><i class="fa-brands fa-square-instagram"></i></li>
+                <li><i class="fa-brands fa-square-twitter"></i></li>
+                <li><i class="fa-brands fa-square-facebook"></i></li>
+            </ul>
+            <p>Imagens meramente ilustrativas. Consulte os restaurantes participantes. TM & © 2021 Burger King Corporation. Todos os direitos reservados.</p>
+        </div>
+    </footer>
     <script src="src/js/script.js"></script>
-    
 </body>
 
 </html>
